@@ -12,9 +12,11 @@ CoreEmbed Technologies is an embedded systems engineering company specializing i
 - PCB & circuit design
 
 ## Tech Stack
-- HTML5
-- CSS3
-
+- C/C++
+- FPGA
+- Verilog/System Verilog
+- Bare-metal
+  
 ## Live Demo
 (Enable GitHub Pages to see live site)
 
