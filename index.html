@@ -1,15 +1,16 @@
- <!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CoreEmbed Technologies™ Pvt. Ltd.</title>
-  <meta
-    name="description"
-    content="CoreEmbed Technologies™ provides Embedded Systems, FPGA, IoT, Linux Drivers, Bare-Metal Development, PCB Design, Engineering Manpower & Product Development Solutions."
-  />  <link
+  <title>CoreEmbed Technologies™ Pvt. Ltd.</title><meta
+name="description"
+content="CoreEmbed Technologies™ Pvt. Ltd. delivers Embedded Systems, FPGA, IoT, Linux Drivers, Bare-Metal Development, Engineering Manpower & Product Development Solutions."
+/>
+
+  <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
-  />  <style>
+  />  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>  <style>
     * {
       margin: 0;
       padding: 0;
@@ -22,36 +23,52 @@
       background: #f8fafc;
       color: #0f172a;
       line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
     }
 
     a {
       text-decoration: none;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Header */
+    /* HEADER */
     header {
-      background: linear-gradient(135deg, #020617, #0f172a, #0ea5e9);
+      background: linear-gradient(135deg, #020617, #0f172a, #0369a1);
       color: white;
+      min-height: 100vh;
       position: relative;
       overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: rgba(14, 165, 233, 0.12);
+      border-radius: 50%;
+      top: -200px;
+      right: -200px;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 25px 0;
+      padding: 28px 0;
+      position: relative;
+      z-index: 2;
     }
 
     .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: white;
     }
 
     .logo span {
@@ -75,46 +92,49 @@
 
     .hero {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       align-items: center;
-      gap: 50px;
-      padding: 80px 0 120px;
+      gap: 60px;
+      padding: 80px 0;
+      position: relative;
+      z-index: 2;
     }
 
-    .hero-content h1 {
-      font-size: 3.8rem;
-      line-height: 1.2;
-      margin-bottom: 20px;
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.15;
+      margin-bottom: 25px;
     }
 
-    .hero-content p {
-      font-size: 1.1rem;
+    .hero p {
       color: #cbd5e1;
-      margin-bottom: 30px;
+      font-size: 1.1rem;
+      margin-bottom: 35px;
+      max-width: 650px;
     }
 
-    .tagline {
+    .tag {
       display: inline-block;
       background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #67e8f9;
       padding: 10px 18px;
       border-radius: 50px;
       margin-bottom: 25px;
-      color: #67e8f9;
       font-size: 0.95rem;
     }
 
-    .btn-group {
+    .buttons {
       display: flex;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 20px;
     }
 
     .btn {
-      padding: 14px 28px;
-      border-radius: 12px;
+      padding: 15px 30px;
+      border-radius: 14px;
       font-weight: 600;
-      transition: 0.3s ease;
+      transition: 0.3s;
       display: inline-block;
     }
 
@@ -125,7 +145,7 @@
 
     .btn-primary:hover {
       background: #d97706;
-      transform: translateY(-3px);
+      transform: translateY(-4px);
     }
 
     .btn-outline {
@@ -138,12 +158,12 @@
       color: #0f172a;
     }
 
-    .hero-card {
+    .hero-right {
       background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
       border: 1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 30px;
       padding: 35px;
+      border-radius: 30px;
     }
 
     .hero-grid {
@@ -155,19 +175,25 @@
     .hero-box {
       background: rgba(255,255,255,0.08);
       padding: 25px;
-      border-radius: 20px;
+      border-radius: 18px;
       text-align: center;
       color: white;
       font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .hero-box:hover {
+      background: #0ea5e9;
+      transform: scale(1.05);
     }
 
     section {
-      padding: 100px 0;
+      padding: 110px 0;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 70px;
     }
 
     .section-title h2 {
@@ -177,21 +203,19 @@
     }
 
     .section-title p {
-      color: #475569;
-      max-width: 800px;
+      max-width: 850px;
       margin: auto;
+      color: #475569;
     }
 
-    /* About */
     .about {
-      text-align: center;
       max-width: 1000px;
       margin: auto;
-      font-size: 1.1rem;
+      text-align: center;
       color: #475569;
+      font-size: 1.1rem;
     }
 
-    /* Services */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -203,7 +227,8 @@
       padding: 35px;
       border-radius: 25px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      transition: 0.4s ease;
+      transition: 0.4s;
+      border: 1px solid #e2e8f0;
     }
 
     .service-card:hover {
@@ -211,9 +236,17 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
 
+    .icon {
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, #0284c7, #0ea5e9);
+      border-radius: 18px;
+      margin-bottom: 25px;
+    }
+
     .service-card h3 {
-      margin-bottom: 15px;
       color: #0284c7;
+      margin-bottom: 15px;
       font-size: 1.4rem;
     }
 
@@ -221,7 +254,6 @@
       color: #475569;
     }
 
-    /* Expertise */
     .expertise {
       background: linear-gradient(135deg, #020617, #0f172a);
       color: white;
@@ -232,41 +264,62 @@
       color: white;
     }
 
-    .tech-grid {
+    .expertise-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
 
-    .tech-item {
+    .expertise-item {
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.08);
-      padding: 18px 25px;
+      padding: 18px 28px;
       border-radius: 14px;
-      font-weight: 500;
       transition: 0.3s;
+      font-weight: 500;
     }
 
-    .tech-item:hover {
+    .expertise-item:hover {
       background: #0ea5e9;
       transform: scale(1.05);
     }
 
-    /* Contact */
-    .contact-wrapper {
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .industry-card {
       background: white;
-      border-radius: 30px;
-      padding: 60px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      border-radius: 20px;
+      padding: 30px;
       text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      transition: 0.3s;
+    }
+
+    .industry-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    }
+
+    .contact-box {
+      background: white;
+      border-radius: 35px;
+      padding: 60px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      gap: 25px;
+      margin-top: 45px;
     }
 
     .contact-card {
@@ -284,7 +337,7 @@
       background: #020617;
       color: #94a3b8;
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
     footer h3 {
@@ -293,14 +346,6 @@
     }
 
     @media(max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2.8rem;
-      }
-
-      .section-title h2 {
-        font-size: 2.3rem;
-      }
-
       nav {
         flex-direction: column;
         gap: 20px;
@@ -311,197 +356,218 @@
         justify-content: center;
       }
 
-      .contact-wrapper {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+
+      .contact-box {
         padding: 35px;
       }
     }
   </style></head>
-<body>  <!-- Header -->  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">Core<span>Embed</span> Technologies™</div><div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#contact">Contact</a>
+<body><header>
+  <div class="container">
+    <nav>
+      <div class="logo">Core<span>Embed</span> Technologies™</div><div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#industries">Industries</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="tag">Delivering Technical Excellence & Skilled Manpower</div>
+
+    <h1>
+      Engineering Innovation with Embedded Intelligence
+    </h1>
+
+    <p>
+      CoreEmbed Technologies™ Pvt. Ltd. specializes in Embedded Systems,
+      FPGA, Linux Drivers, Bare-Metal Development, IoT Product Engineering,
+      Hardware Design, Semiconductor Services, and Engineering Manpower Solutions.
+    </p>
+
+    <div class="buttons">
+      <a href="#services" class="btn btn-primary">Explore Services</a>
+      <a href="#contact" class="btn btn-outline">Contact Us</a>
     </div>
-  </nav>
+  </div>
 
-  <div class="hero">
-    <div class="hero-content">
-      <div class="tagline">
-        Delivering Technical Excellence & Skilled Manpower
-      </div>
-
-      <h1>
-        Engineering Innovation with Embedded Intelligence
-      </h1>
-
-      <p>
-        CoreEmbed Technologies™ Pvt. Ltd. specializes in Embedded Systems,
-        FPGA, Linux Drivers, IoT Solutions, Bare-Metal Development,
-        Engineering Manpower, Firmware Development & Hardware-Software
-        Integration.
-      </p>
-
-      <div class="btn-group">
-        <a href="#services" class="btn btn-primary">Explore Services</a>
-        <a href="#contact" class="btn btn-outline">Contact Us</a>
-      </div>
-    </div>
-
-    <div class="hero-card">
-      <div class="hero-grid">
-        <div class="hero-box">Embedded Systems</div>
-        <div class="hero-box">Linux Drivers</div>
-        <div class="hero-box">FPGA & RTL</div>
-        <div class="hero-box">IoT Solutions</div>
-        <div class="hero-box">Bare-Metal</div>
-        <div class="hero-box">PCB Design</div>
-      </div>
+  <div class="hero-right">
+    <div class="hero-grid">
+      <div class="hero-box">Embedded Systems</div>
+      <div class="hero-box">Linux Drivers</div>
+      <div class="hero-box">FPGA & RTL</div>
+      <div class="hero-box">IoT Solutions</div>
+      <div class="hero-box">Bare-Metal</div>
+      <div class="hero-box">PCB Design</div>
     </div>
   </div>
 </div>
 
-  </header>  <!-- About -->  <section id="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>About CoreEmbed Technologies™</h2>
-        <p>
-          Trusted Technology Partner for Engineering Solutions & Skilled Technical Manpower.
-        </p>
-      </div><div class="about">
+  </div>
+</header><section id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>About CoreEmbed Technologies™</h2>
+      <p>
+        Trusted Technology Partner for Embedded Systems, Semiconductor Services & Skilled Technical Manpower.
+      </p>
+    </div><div class="about">
+  <p>
+    At CoreEmbed Technologies™, we combine advanced engineering expertise with professional manpower solutions to help organizations build smarter, faster, and more reliable technology solutions.
+    
+    From embedded systems and FPGA development to manpower deployment and product engineering, our mission is to bridge the gap between innovation and execution.
+  </p>
+</div>
+
+  </div>
+</section><section id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>
+        Advanced Engineering Solutions & Technical Manpower Services.
+      </p>
+    </div><div class="services-grid">
+
+  <div class="service-card">
+    <div class="icon"></div>
+    <h3>Embedded Systems</h3>
     <p>
-      At CoreEmbed Technologies™, we provide end-to-end embedded systems,
-      semiconductor services, engineering manpower solutions, and product
-      development support. We help startups, enterprises, and technology-driven
-      organizations accelerate innovation with reliable engineering expertise,
-      scalable technical solutions, and industry-ready professionals.
+      Embedded C/C++, Firmware Development, Bare-Metal Programming, RTOS & Linux Driver Development.
     </p>
   </div>
+
+  <div class="service-card">
+    <div class="icon"></div>
+    <h3>FPGA & VLSI</h3>
+    <p>
+      RTL Design, FPGA Development, SoC Integration, Verilog/SystemVerilog & Verification Solutions.
+    </p>
+  </div>
+
+  <div class="service-card">
+    <div class="icon"></div>
+    <h3>IoT Product Development</h3>
+    <p>
+      Smart IoT Devices, Sensor Integration, Wireless Communication & Cloud Monitoring.
+    </p>
+  </div>
+
+  <div class="service-card">
+    <div class="icon"></div>
+    <h3>Hardware & PCB Design</h3>
+    <p>
+      Circuit Design, PCB Layout, Hardware Validation, Debugging & System Optimization.
+    </p>
+  </div>
+
+  <div class="service-card">
+    <div class="icon"></div>
+    <h3>Engineering Manpower</h3>
+    <p>
+      Skilled Engineers for Contract Staffing, Project Deployment & Permanent Hiring.
+    </p>
+  </div>
+
+  <div class="service-card">
+    <div class="icon"></div>
+    <h3>Career Assistance</h3>
+    <p>
+      Technical Training, Resume Support, Interview Preparation & Job Assistance.
+    </p>
+  </div>
+
 </div>
 
-  </section>  <!-- Services -->  <section id="services" style="background:#ffffff;">
-    <div class="container">
+  </div>
+</section><section class="expertise" id="expertise">
+  <div class="container">
+    <div class="section-title">
+      <h2>Core Expertise</h2>
+      <p>
+        Technologies & Engineering Domains We Specialize In.
+      </p>
+    </div><div class="expertise-grid">
+  <div class="expertise-item">Embedded C/C++</div>
+  <div class="expertise-item">Bare-Metal Development</div>
+  <div class="expertise-item">RTOS</div>
+  <div class="expertise-item">Linux Drivers</div>
+  <div class="expertise-item">FPGA Development</div>
+  <div class="expertise-item">RTL Design</div>
+  <div class="expertise-item">VLSI Services</div>
+  <div class="expertise-item">PCB Design</div>
+  <div class="expertise-item">Firmware Development</div>
+  <div class="expertise-item">IoT Solutions</div>
+  <div class="expertise-item">Hardware-Software Integration</div>
+  <div class="expertise-item">System Debugging</div>
+</div>
+
+  </div>
+</section><section id="industries">
+  <div class="container">
+    <div class="section-title">
+      <h2>Industries We Serve</h2>
+      <p>
+        Supporting innovation across multiple engineering and technology sectors.
+      </p>
+    </div><div class="industries-grid">
+  <div class="industry-card">Semiconductor & Electronics</div>
+  <div class="industry-card">Industrial Automation</div>
+  <div class="industry-card">Consumer Electronics</div>
+  <div class="industry-card">Automotive Embedded Systems</div>
+  <div class="industry-card">IoT & Smart Devices</div>
+  <div class="industry-card">Healthcare Technology</div>
+  <div class="industry-card">Telecom & Networking</div>
+  <div class="industry-card">Research & Development</div>
+</div>
+
+  </div>
+</section><section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-box">
       <div class="section-title">
-        <h2>Our Services</h2>
+        <h2>Let’s Build the Future Together</h2>
         <p>
-          Advanced Engineering Solutions & Technical Manpower Services.
+          Looking for engineering solutions, embedded development, FPGA expertise,
+          Linux driver development, IoT solutions, engineering manpower, or product development support?
         </p>
-      </div><div class="services-grid">
-    <div class="service-card">
-      <h3>Embedded Systems</h3>
-      <p>
-        Embedded C/C++, Firmware Development, Bare-Metal Programming,
-        RTOS & Linux Driver Development.
-      </p>
+      </div><div class="contact-grid">
+
+    <div class="contact-card">
+      <h3>Location</h3>
+      <p>Bokaro, Jharkhand, 829112</p>
     </div>
 
-    <div class="service-card">
-      <h3>FPGA & VLSI</h3>
-      <p>
-        RTL Design, FPGA Development, SoC Integration,
-        Verilog/SystemVerilog & Verification Solutions.
-      </p>
+    <div class="contact-card">
+      <h3>Phone</h3>
+      <p>+91 9912523471</p>
     </div>
 
-    <div class="service-card">
-      <h3>IoT Product Development</h3>
-      <p>
-        Smart IoT Devices, Sensor Integration,
-        Wireless Communication & Cloud Monitoring.
-      </p>
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>coreembedtechnologies@gmail.com</p>
     </div>
 
-    <div class="service-card">
-      <h3>Hardware & PCB Design</h3>
-      <p>
-        Circuit Design, PCB Layout, Hardware Validation,
-        Debugging & System Optimization.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Engineering Manpower</h3>
-      <p>
-        Skilled Engineers for Contract Staffing,
-        Project Deployment & Permanent Hiring.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Career Assistance</h3>
-      <p>
-        Technical Training, Resume Support,
-        Interview Preparation & Job Assistance.
-      </p>
-    </div>
   </div>
 </div>
 
-  </section>  <!-- Expertise -->  <section class="expertise" id="expertise">
-    <div class="container">
-      <div class="section-title">
-        <h2>Core Expertise</h2>
-        <p>
-          Technologies & Solutions We Specialize In.
-        </p>
-      </div><div class="tech-grid">
-    <div class="tech-item">Embedded C/C++</div>
-    <div class="tech-item">Bare-Metal Development</div>
-    <div class="tech-item">RTOS</div>
-    <div class="tech-item">Linux Kernel Drivers</div>
-    <div class="tech-item">FPGA Development</div>
-    <div class="tech-item">RTL Design</div>
-    <div class="tech-item">VLSI Services</div>
-    <div class="tech-item">PCB Design</div>
-    <div class="tech-item">Firmware Development</div>
-    <div class="tech-item">IoT Solutions</div>
-    <div class="tech-item">Hardware-Software Integration</div>
-    <div class="tech-item">System Debugging</div>
   </div>
-</div>
-
-  </section>  <!-- Contact -->  <section id="contact">
-    <div class="container">
-      <div class="contact-wrapper">
-        <div class="section-title">
-          <h2>Let’s Build the Future Together</h2>
-          <p>
-            Looking for embedded development, FPGA expertise,
-            Linux driver development, IoT solutions,
-            engineering manpower, or complete product development support?
-          </p>
-        </div><div class="contact-grid">
-      <div class="contact-card">
-        <h3>Location</h3>
-        <p>Bokaro, Jharkhand, 829112</p>
-      </div>
-
-      <div class="contact-card">
-        <h3>Phone</h3>
-        <p>+91 9912523471</p>
-      </div>
-
-      <div class="contact-card">
-        <h3>Email</h3>
-        <p>coreembedtechnologies@gmail.com</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-  </section>  <!-- Footer -->  <footer>
-    <h3>CoreEmbed Technologies™ Pvt. Ltd.</h3><p>
-  Embedded Systems | FPGA | VLSI | Linux Drivers | IoT |
-  PCB Design | Engineering Staffing | Product Development
-</p>
-
-<br />
-
-<p>
-  © 2026 CoreEmbed Technologies™ Pvt. Ltd. All Rights Reserved.
-</p>
-
-  </footer></body>
- </html>
+</section><footer>
+  <h3>CoreEmbed Technologies™ Pvt. Ltd.</h3>  <p>
+    Embedded Systems | FPGA | VLSI | Linux Drivers | IoT | PCB Design |
+    Engineering Staffing | Product Development
+  </p>  <br />  <p>
+    © 2026 CoreEmbed Technologies™ Pvt. Ltd. All Rights Reserved.
+  </p>
+</footer></body>
+</html>
